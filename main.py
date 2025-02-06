@@ -19,7 +19,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/html")  # Отправка типа данных, который будет передаваться
         self.end_headers()  # Завершение формирования заголовков ответа
         try:
-            with open("contacts.html", "r", encoding="utf-8") as file:
+            with open("./html/contacts.html", "r", encoding="utf-8") as file:
                 html_content = file.read()
             self.wfile.write(bytes(html_content, "utf-8"))  # Отправка HTML-контента
         except FileNotFoundError:
